@@ -17,9 +17,10 @@
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="${root }/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
 			$("#btn-login").click(function() {
@@ -42,9 +43,12 @@
 			
 			//회원정보삭제 기능 연결
 			$("#delete-btn").click(function() {			
-				let userid="<c:out value='${userinfo.userid}'/>";
-				location.href = "${root}/user/deleteUser?userid="+userid;
+				let id="<c:out value='${userinfo.id}'/>";
+				location.href = "${root}/user/deleteUser?id="+id;
 			});
+			$("#sendMessageButton").click(function() {
+                $("#contactForm").attr("action", "${root}/user/regist").submit();
+            });
 			 $("#usermodify").click(function() {
                  $("#sendForm").attr("action", "${root}/user/modify").submit();
          });
@@ -55,7 +59,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">대명농구회</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -64,7 +68,6 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	
                 		<c:if test="${ userinfo eq null }">	
@@ -219,13 +222,26 @@
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      <!-- Modal body -->
+				<div class="modal-body">
+					<form method="post" id="loginform" action="">
+						<div class="form-group">
+							<label for="loginId">ID:</label>
+							<input type="text" class="form-control" placeholder="Enter ID" id="id" name="id">
+						</div>
+						<div class="form-group">
+							<label for="loginPwd">Password:</label>
+							<input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
+						</div>
+						
+						
+						<!-- Modal footer -->
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="btn-login">LogIn</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						</div>
+					</form>
+				</div>
     </div>
   </div>
 </div>

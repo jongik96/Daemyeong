@@ -3,6 +3,7 @@ package com.jongik.daemyeong.controller;
 import java.util.Map;
 
 
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -27,8 +28,10 @@ public class UserController {
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session, HttpServletResponse response) {
 		try {
 			UserDto userDto = userService.login(map);
+			System.out.println("id: "+map);
 			if(userDto != null) {
 				session.setAttribute("userinfo", userDto);
+				System.out.println("id: "+map);
 			} else {
 				model.addAttribute("msg", "아이디 또는 비밀번호 확인 후 로그인해 주세요.");
 			}
