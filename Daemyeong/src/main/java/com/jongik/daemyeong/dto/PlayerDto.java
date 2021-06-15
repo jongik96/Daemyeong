@@ -1,6 +1,6 @@
 package com.jongik.daemyeong.dto;
 
-public class player {
+public class PlayerDto {
 
 	private String pname;
 	private int age;
@@ -8,11 +8,11 @@ public class player {
 	private String position;
 	private int backnum;
 	
-	public player() {
+	public PlayerDto() {
 		
 	}
 
-	public player(String pname, int age, int height, String position, int backnum) {
+	public PlayerDto(String pname, int age, int height, String position, int backnum) {
 		this.pname = pname;
 		this.age = age;
 		this.height = height;

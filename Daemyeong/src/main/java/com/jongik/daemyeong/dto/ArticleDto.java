@@ -1,16 +1,16 @@
 package com.jongik.daemyeong.dto;
 
-public class article {
+public class ArticleDto {
 	private int article_no;
 	private String article_name;
 	private String regtime;
 	private String article_detail;
 	
-	public article() {
+	public ArticleDto() {
 		
 	}
 
-	public article(int article_no, String article_name, String regtime, String article_detail) {
+	public ArticleDto(int article_no, String article_name, String regtime, String article_detail) {
 	
 		this.article_no = article_no;
 		this.article_name = article_name;

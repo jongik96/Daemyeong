@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Daemyeong</name>
-	<description>Product with SpringBoot</description>
+	<description>Daemyeong with SpringBoot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -58,6 +58,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 	</dependencies>
 

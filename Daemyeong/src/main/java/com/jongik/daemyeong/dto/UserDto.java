@@ -1,6 +1,6 @@
 package com.jongik.daemyeong.dto;
 
-public class user {
+public class UserDto {
 	private String id;
 	private String name;
 	private String password;
