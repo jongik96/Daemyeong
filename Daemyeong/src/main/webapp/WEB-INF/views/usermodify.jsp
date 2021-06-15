@@ -44,7 +44,7 @@
 			//회원정보삭제 기능 연결
 			$("#delete-btn").click(function() {			
 				let id="<c:out value='${userinfo.id}'/>";
-				location.href = "${root}/user/deleteUser?id="+userid;
+				location.href = "${root}/user/deleteUser?id="+id;
 			});
 			$("#sendMessageButton").click(function() {
                 $("#contactForm").attr("action", "${root}/user/regist").submit();
@@ -92,32 +92,32 @@
                     <div class="col-lg-4 mx-auto">
                      <br /> <br /> <br /> <br />
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form method = "post" action = "" id="contactForm" name="sentMessage" novalidate="novalidate">
-                        <input type="hidden" name="act" id="act" value="">
+                        <form method = "post" action = "" id="sendForm" name="sentMessage" novalidate="novalidate">
+                        <input type="hidden" name="act" id="act" value="modify">
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>ID</label>
-                                    <input class="form-control" id="id" name="id" type="text" placeholder="Id" required="required" data-validation-required-message="Please enter your id." />
+                                    <input class="form-control" id="id" name="id" type="text" readonly value="${userinfo.id}" placeholder="${userinfo.id}" required="required" data-validation-required-message="Please enter your id." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Password</label>
-                                    <input class="form-control" id="password" name="password" type="password" placeholder="Password" required="required" data-validation-required-message="Please enter your password." />
+                                    <input class="form-control" id="password" name="password" type="password" value="${userinfo.password}" required="required" data-validation-required-message="Please enter your password."/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Name</label>
-                                    <input class="form-control" id="name" name="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                                    <input class="form-control" id="name" name="username" type="text" value="${ userinfo.username }" required="required" data-validation-required-message="Please enter your name." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Register</button></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="usermodify" type="submit">수정</button></div>
                         </form>
                     </div>
                 </div>

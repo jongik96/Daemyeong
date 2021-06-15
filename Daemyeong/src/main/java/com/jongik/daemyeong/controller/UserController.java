@@ -63,7 +63,7 @@ public class UserController {
 	
 	}
 	
-	@RequestMapping(value= "/usermodify", method = RequestMethod.GET)
+	@RequestMapping(value= "/usermodify", method = {RequestMethod.GET,RequestMethod.POST})
 	public String mvModify() {
 		return "usermodify";
 	}
