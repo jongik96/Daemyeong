@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jongik.daemyeong.repo.PlayerRepo">
+
+	<select id="listPlayer" resultType="playerDto">
+		select pname, backnum
+		from player order by backnum desc
+	</select>
+
+	<select id="getPlayer" parameterType="int" resultType="PlayerDto">
+        select pname, age, height, position, backnum
+        from player
+        where backnum = #{backnum}
+    </select> 
+
+	
+	 <insert id="registerPlayer" parameterType="playerDto">
+		insert into player (pname, age, height, position, backnum)
+		values (#{pname}, #{age}, #{height}, #{position},#{backnum})
+	</insert>
+	
+	 <update id="modifyPlayer" parameterType="map">
+		update player
+		set age = #{age}, height = #{height}, position = #{position}, backnum = #{backnum}
+		where backnum = #{backnum}
+	</update>
+	
+	<delete id="deletePlayer" parameterType="int">
+	delete from player
+	where backnum = #{backnum}
+	</delete>
+
+</mapper>

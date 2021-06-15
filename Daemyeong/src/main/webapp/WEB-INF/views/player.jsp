@@ -67,7 +67,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Player</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
                          <li class="nav-item"><a class="nav-link" href="#">Notice</a></li>
                     </ul>
@@ -84,33 +84,31 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Daemyung</h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h1 class="text-white mb-4">대명농구회 소개 페이지입니다.</h1>
-                        <h4 class="text-white-50">
-                           선수정보와 경기영상 등을 제공합니다.
-                           
-                            
-                        </h4>
-                    </div>
-                </div>
-                 <br />
-                <img class="img-fluid" src="${root }/assets/img/daemyeonglogo.jpg" alt="..." />
-            </div>
-        </section>
+        
+		<div class="col-md-4">
+				<h4>선수 목록</h4>
+				<table class="table table-hover">
+                    <tbody>
+                    <c:if test="${playerlist ne null }">
+                        <c:forEach var = "player" items = "${playerlist}">
+                        <tr>
+                        <td><a href="${root}/search/mvdealdetail/${player.backnum}">${player.pname}</a><br>		 
+                        </td>
+                        </tr>
+                        </c:forEach>
+                        </c:if>
+                         <c:if test="${playerlist eq null }">
+                       			<div>
+                       			<a>목록이 없습니다.</a>
+                       			</div>
+                        </c:if>
+                    
+                    </tbody>
+                    </table>
+				
+				
+			</div>
+		
         
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>
