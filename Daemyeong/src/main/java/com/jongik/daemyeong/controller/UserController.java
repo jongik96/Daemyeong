@@ -87,7 +87,7 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value= "/mvsignup", method = RequestMethod.GET)
+	@RequestMapping(value= "/mvsignup", method = {RequestMethod.GET,RequestMethod.POST})
 	public String mvRegist() {
 		return "signup";
 	}
@@ -98,11 +98,12 @@ public class UserController {
 		UserDto userDto = new UserDto();
 
 		userDto.setId(map.get("id"));
-		userDto.setName(map.get("name"));
 		userDto.setPassword(map.get("password"));
-
+		userDto.setName(map.get("name"));
+		System.out.println(map.get("id"));
 		try {
 			userService.registerUser(userDto);
+			System.out.println(map.get("id"));
 			return "index";
 		} catch (Exception e) {
 			e.printStackTrace();
