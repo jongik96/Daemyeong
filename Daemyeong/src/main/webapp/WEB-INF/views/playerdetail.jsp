@@ -49,8 +49,8 @@
 			$("#sendMessageButton").click(function() {
                 $("#contactForm").attr("action", "${root}/user/regist").submit();
             });
-			 $("#usermodify").click(function() {
-                 $("#sendForm").attr("action", "${root}/user/modify").submit();
+			 $("#playermodify").click(function() {
+                 $("#sendForm").attr("action", "${root}/player/playermodify").submit();
          });
         });
         </script>
@@ -115,13 +115,13 @@
                          <td>${player.backnum}<br>		 
                         </td>
                         </tr>
+                        
                      
                        
                     
                     </tbody>
                     </table>
-				
-				
+                    <a href="${root }/player/mvplayer">선수목록으로 돌아가기</a>
 			</div>
 		
         
@@ -189,7 +189,7 @@
       </div>
       <div class="modal-footer">
       
-        <button type="button" class="btn btn-primary" id="modify-btn" onclick="location.href='${root}/user/usermodify'" >수정</button>
+        <button type="button" class="btn btn-primary" id="modify-btn" onclick="location.href='${root}/user/usermodify?pname=${player.pname }'" >수정</button>
         <button type="button" class="btn btn-danger" id="delete-btn">회원 탈퇴</button>
       </div>
     </div>

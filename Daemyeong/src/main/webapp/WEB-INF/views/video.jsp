@@ -116,9 +116,9 @@
 						<iframe width="540" height="315" src="https://www.youtube.com/embed/Eb-YXwOBd_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
 					</div>
-					
+					<div><h3>vs IMPACT (20세부)</h3></div>
 					<div class="col-lg-12 mx-auto">
-						<div><h3>vs IMPACT (20세부)</h3></div>
+						
 						<div style="float:left;">
 						<iframe width="540" height="315" src="https://www.youtube.com/embed/6ZsxepEEErg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<iframe width="540" height="315" src="https://www.youtube.com/embed/vvtrS3_ro54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

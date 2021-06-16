@@ -50,8 +50,12 @@
                 $("#contactForm").attr("action", "${root}/user/regist").submit();
             });
 			 $("#usermodify").click(function() {
-                 $("#sendForm").attr("action", "${root}/user/modify").submit();
+                 $("#sendForm").attr("action", "${root}/user/usermodify").submit();
          });
+			 $("#registerplayer").click(function() {
+                 $("#sendForm").attr("action", "${root}/player/signup").submit();
+         });
+		
         });
         </script>
     </head>
@@ -59,7 +63,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Home</a>
+                <a class="navbar-brand" href="${root }/" style="color:black">Home</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -67,8 +71,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer">Player</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/video/mvvideo">Video</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
                          <li class="nav-item"><a class="nav-link" href="#">Notice</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	
@@ -84,34 +88,57 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Daemyung basketball</h1>
+<div align="center">
+<img src="${root }/assets/img/daemyeonglogo.jpg"/>
+</div>
+        <div class="row">
+       
+                    <div class="col-lg-4 mx-auto">
+                     <br /> <br /> <br /> <br />
+                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                        <form method = "post" action = "" id="sendForm" name="sentMessage" novalidate="novalidate">
+                        <input type="hidden" name="act" id="act" value="modify">
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Player Name</label>
+                                    <input class="form-control" id="pname" name="pname" type="text" placeholder="name" required="required" data-validation-required-message="Please enter your id." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Age</label>
+                                    <input class="form-control" id="age" name="age" type="number" placeholder="age" required="required" data-validation-required-message="Please enter your password."/>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Height</label>
+                                    <input class="form-control" id="height" name="height" type="number" placeholder="height" required="required" data-validation-required-message="Please enter your name." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                             <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Position</label>
+                                    <input class="form-control" id="position" name="position" type="text" placeholder="position" required="required" data-validation-required-message="Please enter your name." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                             <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>BackNumber</label>
+                                    <input class="form-control" id="backnum" name="backnum" type="number" placeholder="backnum" required="required" data-validation-required-message="Please enter your name." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="success"></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="registerplayer" type="submit">수정</button></div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h1 class="text-white mb-4">대명농구회 소개 페이지입니다.</h1>
-                        <h4 class="text-white-50">
-                           선수정보와 경기영상 등을 제공합니다.
-                           
-                            
-                        </h4>
-                    </div>
-                </div>
-                 <br />
-                <img class="img-fluid" src="${root }/assets/img/daemyeonglogo.jpg" alt="..." />
-            </div>
-        </section>
-        
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>
         <!-- Modal -->
@@ -122,26 +149,13 @@
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <!-- Modal body -->
-				<div class="modal-body">
-					<form method="post" id="loginform" action="">
-						<div class="form-group">
-							<label for="loginId">ID:</label>
-							<input type="text" class="form-control" placeholder="Enter ID" id="id" name="id">
-						</div>
-						<div class="form-group">
-							<label for="loginPwd">Password:</label>
-							<input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
-						</div>
-						
-						
-						<!-- Modal footer -->
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" id="btn-login">LogIn</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
-					</form>
-				</div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>

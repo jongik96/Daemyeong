@@ -107,7 +107,7 @@
                     
                     </tbody>
                     </table>
-				
+				<a href="${root}/player/mvsignup">선수 등록</a>
 				
 			</div>
 		
