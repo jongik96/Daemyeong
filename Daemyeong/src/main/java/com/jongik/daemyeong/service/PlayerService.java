@@ -14,7 +14,7 @@ public interface PlayerService {
 		List<PlayerDto> listPlayer() throws SQLException;
 		
 		//선수 정보
-		PlayerDto getPlayer(int backnum) throws SQLException;
+		PlayerDto getPlayer(String pname) throws SQLException;
 		
 		// 선수 정보 수정
 		void modifyPlayer(PlayerDto playerDto) throws SQLException;

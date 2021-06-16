@@ -28,8 +28,8 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
-	public PlayerDto getPlayer(int backnum) throws SQLException {
-		return sqlSession.getMapper(PlayerRepo.class).getPlayer(backnum);
+	public PlayerDto getPlayer(String pname) throws SQLException {
+		return sqlSession.getMapper(PlayerRepo.class).getPlayer(pname);
 	}
 
 	@Override

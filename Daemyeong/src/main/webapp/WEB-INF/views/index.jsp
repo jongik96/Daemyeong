@@ -68,7 +68,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer">Player</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${root}/video/mvvideo">Video</a></li>
                          <li class="nav-item"><a class="nav-link" href="#">Notice</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	

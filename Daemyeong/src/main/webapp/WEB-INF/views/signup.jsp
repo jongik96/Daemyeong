@@ -59,37 +59,38 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top" style="color:black">대명농구회</a>
+                <a class="navbar-brand" href="${root }/" style="color:black">대명농구회</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Player</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
-                         <li class="nav-item"><a class="nav-link" href="#">Notice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer" style="color:black">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" style="color:black">Video</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#" style="color:black">Notice</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	
                 		<c:if test="${ userinfo eq null }">	
-	                        <li class="nav-item mx-0 mx-lg-1" id="signupli"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="signup" href="${root}/user/mvsignup">Sign up</a></li>
-	                        <li class="nav-item mx-0 mx-lg-1" id="signinli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="signupli"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="signup" href="${root}/user/mvsignup" style="color:black">Sign up</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="signinli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#loginModal" style="color:black">Sign in</a></li>
                         </c:if>
                         <c:if test="${ userinfo ne null }">	
-	                        <li class="nav-item mx-0 mx-lg-1" id="logoutli" ><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout">Logout</a></li>
-	                        <li class="nav-item mx-0 mx-lg-1" id="userinfoli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#infoModal">UserInfo</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="logoutli" ><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout" style="color:black">Logout</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="userinfoli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#infoModal" style="color:black">UserInfo</a></li>
                     	</c:if>
                     </ul>
                 </div>
             </div>
         </nav>
 <div align="center">
+<br/><br/>
+
 <img src="${root }/assets/img/daemyeonglogo.jpg"/>
 </div>
         <div class="row">
        
-                    <div class="col-lg-4 mx-auto">
+                    <div class="col-lg-2 mx-auto">
                      <br /> <br /> <br /> <br />
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form method = "post" action = "" id="contactForm" name="sentMessage" novalidate="novalidate">

@@ -5,14 +5,14 @@
 <mapper namespace="com.jongik.daemyeong.repo.PlayerRepo">
 
 	<select id="listPlayer" resultType="playerDto">
-		select pname, backnum
+		select *
 		from player order by backnum desc
 	</select>
 
-	<select id="getPlayer" parameterType="int" resultType="PlayerDto">
+	<select id="getPlayer" parameterType="String" resultType="PlayerDto">
         select pname, age, height, position, backnum
         from player
-        where backnum = #{backnum}
+        where pname = #{pname}
     </select> 
 
 	

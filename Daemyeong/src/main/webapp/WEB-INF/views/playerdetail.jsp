@@ -66,7 +66,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer" style="color:black">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${root }/player/mvplayer" style="color:black">Player</a></li>
                         <li class="nav-item"><a class="nav-link" href="${root}/video/mvvideo" style="color:black">Video</a></li>
                          <li class="nav-item"><a class="nav-link" href="#" style="color:black">Notice</a></li>
                     </ul>
@@ -86,24 +86,37 @@
 <div align="center">
 <img src="${root }/assets/img/daemyeonglogo.jpg"/>
 </div>        
-		<div class="col-lg-3 mx-auto">
-				<h4>선수 목록</h4>
+		<div class="col-lg-4 mx-auto">
+				<h4>선수정보</h4>
 				<table class="table table-hover">
                     <tbody>
-                    <c:if test="${playerlist ne null }">
-                        <c:forEach var = "player" items = "${playerlist}">
+                    
+                    
                         <tr>
-                        <td align="center">${player.backnum }</td>
-                        <td><a href="${root}/player/playerdetail/${player.pname}">${player.pname}</a><br>		 
+                        <td> Player Name : </td>
+                        <td>${player.pname}<br>		 
                         </td>
                         </tr>
-                        </c:forEach>
-                        </c:if>
-                         <c:if test="${playerlist eq null }">
-                       			<div>
-                       			<a>목록이 없습니다.</a>
-                       			</div>
-                        </c:if>
+                        <td> Age : </td>
+                         <td>${player.age}<br>		 
+                        </td>
+                         <tr>
+                        <td> Height(cm) : </td>
+                         <td>${player.height}<br>		 
+                        </td>
+                         </tr>
+                         <tr>
+                        <td> Position : </td>
+                         <td>${player.position}<br>		 
+                        </td>
+                         </tr>
+                         <tr>
+                        <td> BackNumber : </td>
+                         <td>${player.backnum}<br>		 
+                        </td>
+                        </tr>
+                     
+                       
                     
                     </tbody>
                     </table>
