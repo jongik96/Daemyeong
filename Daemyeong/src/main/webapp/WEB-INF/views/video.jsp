@@ -11,6 +11,7 @@
         <meta name="author" content="" />
         <title>대명농구회</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -53,6 +54,8 @@
                  $("#sendForm").attr("action", "${root}/user/modify").submit();
          });
         });
+        
+        
         </script>
     </head>
     <body id="page-top">
@@ -88,37 +91,88 @@
 </div>        
 		<div class="col-lg-12 mx-auto">
 				<h1>경기 영상</h4>
-			
-				<div class="col-lg-12 mx-auto" >
-					<div><h3>vs S-FIVE (20세부)</h3></div>			
-					<div style="float:left;">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/yAJamtcMX1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/NkEIiZrNO3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/o9sr7fIz5QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Eb-YXwOBd_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				</div>
-				<div class="col-lg-12 mx-auto">
-					<div><h3> vs IMPACT (20세부)</h3></div>
-					<div style="float:left;">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/6ZsxepEEErg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/vvtrS3_ro54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/9ne5U-bAQuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/8WV00JujFjM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#play2019">2019</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#play2018">2018</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#play2017">2017</a>
+  </li>
+</ul>
+				
+				
+			<div id="myTabContent" class="tab-content">
+	  			<!-- 2019년 영상 -->
+	  			<div class="tab-pane fade show active" id="play2019">
+					<div class="col-lg-12 mx-auto" >
+						<div><h3>vs S-FIVE (20세부)</h3></div>			
+						<div style="float:left;">
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/yAJamtcMX1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/NkEIiZrNO3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/o9sr7fIz5QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/Eb-YXwOBd_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-12 mx-auto">
-					<div><h3> vs TBLM (20세부)</h3></div>
-					<div style="float:left;">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/vcNoYe9-uKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/ApjA4IEHgto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/2AV8vEG391g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/SftWPfBveR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					
+					<div class="col-lg-12 mx-auto">
+						<div><h3>vs IMPACT (20세부)</h3></div>
+						<div style="float:left;">
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/6ZsxepEEErg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/vvtrS3_ro54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/9ne5U-bAQuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/8WV00JujFjM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="col-lg-12 mx-auto">
+					
+						<div><h3>vs TBLM (20세부)</h3></div>
+						<div style="float:left;">
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/vcNoYe9-uKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/ApjA4IEHgto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/2AV8vEG391g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/SftWPfBveR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
 					</div>
 				</div>
 				
+				<!-- 2018년 영상 -->
+				<div class="tab-pane fade show active" id="play2018">
+					<div class="col-lg-12 mx-auto" >
+						<div><h3>vs 다크호스 (20세부)</h3></div>			
+						<div style="float:left;">
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/hIjXqADrppo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/hKfDIEaqdns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/FU4Y_jQxBNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/B3R0-pMh7qY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<br/>
+					<div class="col-lg-12 mx-auto">
+						<div><h3>vs IMPACT (20세부)</h3></div>
+						<div style="float:left;">
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/WzcgRlR3CgU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/w0kGbEQiRxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/0hqSbRnbje8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/uaW_pYt7tfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
 				
-			
+				<div class="tab-pane fade show active" id="play2017">
+					<div class="col-lg-12 mx-auto" >
+						<div><h3>vs S-FIVE (20세부)</h3></div>			
+						<div style="float:left;">
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/gdZZ6mEtX_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/fsvJJ9P1wtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/w1ZPuOQLEH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>					
+						<iframe width="540" height="315" src="https://www.youtube.com/embed/ahlRrNqMOZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		
         
@@ -194,6 +248,9 @@
 </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <!-- Core theme JS-->
         <script src="${root }/js/scripts.js"></script>
     </body>
