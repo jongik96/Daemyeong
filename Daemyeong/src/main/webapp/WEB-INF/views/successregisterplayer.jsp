@@ -51,7 +51,36 @@
             });
 			 $("#usermodify").click(function() {
                  $("#sendForm").attr("action", "${root}/user/modify").submit();
-         });
+         	});
+			 
+			 $('#mvWriteBtn').focusin(function() {
+					$(location).attr("href", "${root}/article/write");
+			});
+				
+			 $("#searchBtn").click(function() {
+					
+					if($("#sword").val() == "") {
+						alert("모든 목록 조회!!");
+					} 
+			 	$("#searchform").attr("action", "${root}/article/list").submit();
+			});
+				
+			$(".page-item").click(function() {
+					$("#pg").val(($(this).attr("data-pg")));
+					$("#pageform").attr("action", "${root}/article/list").submit();
+			});	 
+			$("#writeBtn").click(function() {
+				if($("#subject").val() == "") {
+					alert("제목 입력!!!");
+					return;
+				} else if($("#content").val() == "") {
+					alert("내용 입력!!!");
+					return;
+				} else {
+					$("#writeform").attr("action", "${root}/article/write").submit();
+				}
+			});
+		
         });
         </script>
     </head>
@@ -86,38 +115,13 @@
 <div align="center">
 <img src="${root }/assets/img/daemyeonglogo.jpg"/>
 </div>        
-		<div class="col-lg-3 mx-auto">
-				<h4>선수 목록</h4>
-				<table class="table table-hover">
-                    <tbody>
-                    <c:if test="${playerlist ne null }">
-                        <c:forEach var = "player" items = "${playerlist}">
-                        <tr>
-                        <td align="center">${player.backnum }</td>
-                        <td><a href="${root}/player/playerdetail/${player.pname}">${player.pname}</a><br>		 
-                        </td>
-                        <td>
-                         <c:if test="${userinfo ne null }">
-							<a href="${root}/player/modify?pname=${player.pname}">수정</a>
-							<a href="${root}/player/delete?pname=${player.pname}">삭제</a>
-						</c:if>
-                        </td>
-                        </tr>
-                        </c:forEach>
-                        </c:if>
-                         <c:if test="${playerlist eq null }">
-                       			<div>
-                       			<a>목록이 없습니다.</a>
-                       			</div>
-                        </c:if>
-                    
-                    </tbody>
-                    </table>
-               <c:if test="${userinfo ne null }">
-				<a href="${root}/player/mvsignup">선수 등록</a>
-				</c:if>
-			</div>
-		
+
+		<div class="col-lg-6">
+	  <div class="jumbotron">
+	    <h1>선수등록이 완료되었습니다.</h1>      
+	  </div>  
+	  <p><a href="${root}/player/mvplayer">선수목록</a></p>
+	</div>
         
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>

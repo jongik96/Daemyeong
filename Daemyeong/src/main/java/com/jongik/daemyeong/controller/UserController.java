@@ -40,7 +40,7 @@ public class UserController {
 			model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
 			return "error/error.jsp";
 		}
-		return "index";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

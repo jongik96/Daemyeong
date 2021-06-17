@@ -52,9 +52,9 @@
 			 $("#usermodify").click(function() {
                  $("#sendForm").attr("action", "${root}/user/modify").submit();
          });
-			 $("#playermodify").click(function() {
-                 $("#sendForm").attr("action", "${root}/player/modify?pname={$player.pname}").submit();
-         });
+			 $("#modifyBtn").click(function() {
+						$("#modifyform").attr("action", "${root}/player/modify").submit();					
+				});
 		
         });
         </script>

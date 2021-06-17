@@ -21,15 +21,15 @@
 		values (#{pname}, #{age}, #{height}, #{position},#{backnum})
 	</insert>
 	
-	 <update id="modifyPlayer" parameterType="map">
+	 <update id="modifyPlayer" parameterType="playerDto">
 		update player
 		set age = #{age}, height = #{height}, position = #{position}, backnum = #{backnum}
-		where backnum = #{backnum}
+		where pname = #{pname}
 	</update>
 	
-	<delete id="deletePlayer" parameterType="int">
+	<delete id="deletePlayer" parameterType="String">
 	delete from player
-	where backnum = #{backnum}
+	where pname = #{pname}
 	</delete>
 
 </mapper>

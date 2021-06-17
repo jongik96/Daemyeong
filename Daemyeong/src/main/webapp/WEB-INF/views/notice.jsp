@@ -109,7 +109,9 @@
 	  <p>회원만 글쓰기가 가능합니다</p>  
 	  <table class="table table-borderless">
 	  	<tr>
+	  	<c:if test="${userinfo ne null }">
 	  		<td align="right"><a href="${root}/article/write">글쓰기</a><br></td>
+	  	</c:if>
 	  	</tr>
 	  </table>
 	  <form id="searchform" method="get" class="form-inline" action="">
@@ -156,8 +158,10 @@
 	      <c:if test="${userinfo.id == article.id}">
 	      <tr>
 	        <td colspan="2">
+	        <c:if test="${userinfo ne null }">
 			<a href="${root}/article/modify?articleno=${article.articleno}">수정</a>
 			<a href="${root}/article/delete?articleno=${article.articleno}">삭제</a>
+			</c:if>
 			</td>
 	      </tr>
 	      </c:if>

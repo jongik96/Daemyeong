@@ -2,6 +2,7 @@ package com.jongik.daemyeong.controller;
 
 import java.sql.SQLException;
 
+
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +41,31 @@ public class PlayerController {
 		
 		return "player";
 	}
-
+	
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public String modify(@RequestParam("pname") String pname, Model model) {
+		try {
+			PlayerDto player = playerService.getPlayer(pname);
+			model.addAttribute("player", player);
+			return "modifyplayer";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("msg", "글수정 처리 중 문제가 발생했습니다.");
+			return "error/error";
+		}
+	}
+	
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String modify(PlayerDto playerDto, Model model, HttpSession session) throws Exception {
+	
+			
+		playerService.modifyPlayer(playerDto);
+				return "successregisterplayer";
+			
+		
+	}
+	
+	
 	@RequestMapping(value = "/playerdetail/{pname}", method = RequestMethod.GET)
 	public String mvdetail(@PathVariable("pname") String pname, Model model) throws SQLException {
 		PlayerDto player = playerService.getPlayer(pname);
@@ -56,7 +81,7 @@ public class PlayerController {
 		
 		playerService.registerPlayer(playerDto);
 		
-		return "player";
+		return "successregisterplayer";
 			
 		
 	}

@@ -19,5 +19,5 @@ public interface PlayerService {
 		// 선수 정보 수정
 		void modifyPlayer(PlayerDto playerDto) throws SQLException;
 		// 선수정보 삭제
-		void deletePlayer(int backnum) throws SQLException;
+		void deletePlayer(String pname) throws SQLException;
 }

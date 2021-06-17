@@ -38,8 +38,8 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
-	public void deletePlayer(int backnum) throws SQLException {
-		sqlSession.getMapper(PlayerRepo.class).deletePlayer(backnum);
+	public void deletePlayer(String pname) throws SQLException {
+		sqlSession.getMapper(PlayerRepo.class).deletePlayer(pname);
 	}
 
 	
