@@ -90,6 +90,7 @@
         <div class="row">
        
                     <div class="col-lg-4 mx-auto">
+                    <h1>Modify UserInfo</h1>
                      <br /> <br /> <br /> <br />
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form method = "post" action = "" id="sendForm" name="sentMessage" novalidate="novalidate">

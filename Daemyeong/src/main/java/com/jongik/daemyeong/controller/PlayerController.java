@@ -50,7 +50,7 @@ public class PlayerController {
 			return "modifyplayer";
 		} catch (Exception e) {
 			e.printStackTrace();
-			model.addAttribute("msg", "글수정 처리 중 문제가 발생했습니다.");
+			model.addAttribute("msg", "선수정보수정 처리 중 문제가 발생했습니다.");
 			return "error/error";
 		}
 	}
@@ -85,7 +85,17 @@ public class PlayerController {
 			
 		
 	}
-
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(@RequestParam("pname") String pname, Model model) {
+		try {
+			playerService.deletePlayer(pname);
+			return "player";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("msg", "선수정보삭제 처리 중 문제가 발생했습니다.");
+			return "error/error";
+		}
+	}
 	
 	
 }

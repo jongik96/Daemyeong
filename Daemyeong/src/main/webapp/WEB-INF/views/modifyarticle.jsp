@@ -99,7 +99,7 @@
 <img src="${root }/assets/img/daemyeonglogo.jpg"/>
 </div>
       <div class="col-lg-6 mx-auto" align="center">
-		<h2>방명록 글수정</h2>
+		<h2>게시판 글수정</h2>
 		<form id="modifyform" method="post" action="">
 		<input type="hidden" name="articleno" id="articleno" value="${article.articleno}">
 			<div class="form-group" align="left">

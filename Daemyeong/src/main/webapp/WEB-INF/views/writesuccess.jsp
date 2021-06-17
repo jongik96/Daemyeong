@@ -116,7 +116,7 @@
 <img src="${root }/assets/img/daemyeonglogo.jpg"/>
 </div>        
 
-		<div class="col-lg-6">
+		<div class="col-lg-6 mx-auto">
 	  <div class="jumbotron">
 	    <h1>글작성 성공!!!</h1>      
 	  </div>  

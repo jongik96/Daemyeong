@@ -91,6 +91,7 @@
         <div class="row">
        
                     <div class="col-lg-2 mx-auto">
+                    <h1>Join Us</h1>
                      <br /> <br /> <br /> <br />
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form method = "post" action = "" id="contactForm" name="sentMessage" novalidate="novalidate">

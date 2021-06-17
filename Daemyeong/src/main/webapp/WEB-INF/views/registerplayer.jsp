@@ -70,19 +70,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Player</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
-                         <li class="nav-item"><a class="nav-link" href="#">Notice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" style="color:black">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects" style="color:black">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" style="color:black">Video</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#" style="color:black">Notice</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	
                 		<c:if test="${ userinfo eq null }">	
-	                        <li class="nav-item mx-0 mx-lg-1" id="signupli"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="signup" href="${root}/user/mvsignup">Sign up</a></li>
-	                        <li class="nav-item mx-0 mx-lg-1" id="signinli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="signupli"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="signup" href="${root}/user/mvsignup" style="color:black">Sign up</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="signinli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#loginModal" style="color:black">Sign in</a></li>
                         </c:if>
                         <c:if test="${ userinfo ne null }">	
-	                        <li class="nav-item mx-0 mx-lg-1" id="logoutli" ><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout">Logout</a></li>
-	                        <li class="nav-item mx-0 mx-lg-1" id="userinfoli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#infoModal">UserInfo</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="logoutli" ><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout" style="color:black">Logout</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="userinfoli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#infoModal" style="color:black">UserInfo</a></li>
                     	</c:if>
                     </ul>
                 </div>
@@ -94,6 +94,7 @@
         <div class="row">
        
                     <div class="col-lg-4 mx-auto">
+                    <h1>Add Player</h1>
                      <br /> <br /> <br /> <br />
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form method = "post" action = "" id="sendForm" name="sentMessage" novalidate="novalidate">
