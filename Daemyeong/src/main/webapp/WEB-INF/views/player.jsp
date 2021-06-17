@@ -107,8 +107,9 @@
                     
                     </tbody>
                     </table>
+               <c:if test="${userinfo ne null }">
 				<a href="${root}/player/mvsignup">선수 등록</a>
-				
+				</c:if>
 			</div>
 		
         

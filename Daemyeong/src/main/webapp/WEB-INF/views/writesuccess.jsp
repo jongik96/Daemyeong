@@ -51,7 +51,36 @@
             });
 			 $("#usermodify").click(function() {
                  $("#sendForm").attr("action", "${root}/user/modify").submit();
-         });
+         	});
+			 
+			 $('#mvWriteBtn').focusin(function() {
+					$(location).attr("href", "${root}/article/write");
+			});
+				
+			 $("#searchBtn").click(function() {
+					
+					if($("#sword").val() == "") {
+						alert("모든 목록 조회!!");
+					} 
+			 	$("#searchform").attr("action", "${root}/article/list").submit();
+			});
+				
+			$(".page-item").click(function() {
+					$("#pg").val(($(this).attr("data-pg")));
+					$("#pageform").attr("action", "${root}/article/list").submit();
+			});	 
+			$("#writeBtn").click(function() {
+				if($("#subject").val() == "") {
+					alert("제목 입력!!!");
+					return;
+				} else if($("#content").val() == "") {
+					alert("내용 입력!!!");
+					return;
+				} else {
+					$("#writeform").attr("action", "${root}/article/write").submit();
+				}
+			});
+		
         });
         </script>
     </head>
@@ -59,58 +88,40 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Home</a>
+                <a class="navbar-brand" href="${root }/" style="color:black">Home</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer">Player</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/video/mvvideo">Video</a></li>
-                         <li class="nav-item"><a class="nav-link" href="${root}/article/list?pg=1&key=&word=">Notice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer" style="color:black">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${root}/video/mvvideo" style="color:black">Video</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#" style="color:black">Notice</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	
                 		<c:if test="${ userinfo eq null }">	
-	                        <li class="nav-item mx-0 mx-lg-1" id="signupli"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="signup" href="${root}/user/mvsignup">Sign up</a></li>
-	                        <li class="nav-item mx-0 mx-lg-1" id="signinli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="signupli"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="signup" href="${root}/user/mvsignup" style="color:black">Sign up</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="signinli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#loginModal" style="color:black">Sign in</a></li>
                         </c:if>
                         <c:if test="${ userinfo ne null }">	
-	                        <li class="nav-item mx-0 mx-lg-1" id="logoutli" ><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout">Logout</a></li>
-	                        <li class="nav-item mx-0 mx-lg-1" id="userinfoli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#infoModal">UserInfo</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="logoutli" ><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout" style="color:black">Logout</a></li>
+	                        <li class="nav-item mx-0 mx-lg-1" id="userinfoli"><a type="button" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-bs-toggle="modal" data-bs-target="#infoModal" style="color:black">UserInfo</a></li>
                     	</c:if>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Daemyung basketball</h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h1 class="text-white mb-4">대명농구회 소개 페이지입니다.</h1>
-                        <h4 class="text-white-50">
-                           선수정보와 경기영상 등을 제공합니다.
-                           
-                            
-                        </h4>
-                    </div>
-                </div>
-                 <br />
-                <img class="img-fluid" src="${root }/assets/img/daemyeonglogo.jpg" alt="..." />
-            </div>
-        </section>
+<div align="center">
+<img src="${root }/assets/img/daemyeonglogo.jpg"/>
+</div>        
+
+		<div class="col-lg-6">
+	  <div class="jumbotron">
+	    <h1>글작성 성공!!!</h1>      
+	  </div>  
+	  <p><a href="${root}/article/list?pg=1&key=&word=">글목록</a></p>
+	</div>
         
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>

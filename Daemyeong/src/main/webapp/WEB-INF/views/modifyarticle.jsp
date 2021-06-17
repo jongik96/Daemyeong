@@ -51,7 +51,18 @@
             });
 			 $("#usermodify").click(function() {
                  $("#sendForm").attr("action", "${root}/user/modify").submit();
-         });
+         	});
+			 $("#modifyBtn").click(function() {
+					if($("#subject").val() == "") {
+						alert("제목 입력!!!");
+						return;
+					} else if($("#content").val() == "") {
+						alert("내용 입력!!!");
+						return;
+					} else {
+						$("#modifyform").attr("action", "${root}/article/modify").submit();
+					}
+			});
         });
         </script>
     </head>
@@ -59,7 +70,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Home</a>
+                <a class="navbar-brand" href="${root }/" style="color:black">Home</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -67,9 +78,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/player/mvplayer">Player</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${root}/video/mvvideo">Video</a></li>
-                         <li class="nav-item"><a class="nav-link" href="${root}/article/list?pg=1&key=&word=">Notice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Player</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#">Notice</a></li>
                     </ul>
                     <ul class="navbar-nav ml-auto">	
                 		<c:if test="${ userinfo eq null }">	
@@ -84,34 +95,25 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Daemyung basketball</h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h1 class="text-white mb-4">대명농구회 소개 페이지입니다.</h1>
-                        <h4 class="text-white-50">
-                           선수정보와 경기영상 등을 제공합니다.
-                           
-                            
-                        </h4>
-                    </div>
-                </div>
-                 <br />
-                <img class="img-fluid" src="${root }/assets/img/daemyeonglogo.jpg" alt="..." />
-            </div>
-        </section>
-        
+<div align="center">
+<img src="${root }/assets/img/daemyeonglogo.jpg"/>
+</div>
+      <div class="col-lg-6 mx-auto" align="center">
+		<h2>방명록 글수정</h2>
+		<form id="modifyform" method="post" action="">
+		<input type="hidden" name="articleno" id="articleno" value="${article.articleno}">
+			<div class="form-group" align="left">
+				<label for="subject">제목:</label>
+				<input type="text" class="form-control" id="subject" name="subject" value="${article.subject}">
+			</div>
+			<div class="form-group" align="left">
+				<label for="content">내용:</label>
+				<textarea class="form-control" rows="15" id="content" name="content">${article.content}</textarea>
+			</div>
+			<button type="button" id="modifyBtn" class="btn btn-primary">글수정</button>
+			<button type="reset" class="btn btn-warning">초기화</button>
+		</form>
+	</div>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>
         <!-- Modal -->
@@ -122,26 +124,13 @@
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <!-- Modal body -->
-				<div class="modal-body">
-					<form method="post" id="loginform" action="">
-						<div class="form-group">
-							<label for="loginId">ID:</label>
-							<input type="text" class="form-control" placeholder="Enter ID" id="id" name="id">
-						</div>
-						<div class="form-group">
-							<label for="loginPwd">Password:</label>
-							<input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
-						</div>
-						
-						
-						<!-- Modal footer -->
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" id="btn-login">LogIn</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
-					</form>
-				</div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>

@@ -27,6 +27,8 @@ public class PlayerController {
 	@Autowired
 	private PlayerService playerService;
 	
+
+	
 	@RequestMapping(value= "/mvplayer", method = {RequestMethod.GET,RequestMethod.POST})
 	public String mvPlayer(Model model) {
 		try {
@@ -53,6 +55,7 @@ public class PlayerController {
 	public String joinTeam(PlayerDto playerDto, Model model, HttpSession session) throws Exception {
 		
 		playerService.registerPlayer(playerDto);
+		
 		return "player";
 			
 		

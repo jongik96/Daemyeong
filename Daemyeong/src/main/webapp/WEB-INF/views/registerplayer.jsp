@@ -135,7 +135,7 @@
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="registerplayer" type="submit">수정</button></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="registerplayer" type="submit">등록</button></div>
                         </form>
                     </div>
                 </div>
